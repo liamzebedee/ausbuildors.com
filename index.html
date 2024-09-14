@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ausbuildors</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&display=swap');
+
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: white;
+            overflow: hidden;
+            cursor: url('/logo.png') 64 64, auto;
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            font-size: 20%;
+        }
+        #canvas {
+            display: block;
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: -1;
+        }
+
+        h2, span, p, a, a:visited {
+            text-decoration: none;
+            /* no underline */
+
+        }
+
+        header {
+            position: fixed;
+            top: 40%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            color: rgba(137, 207, 240, 0.8);
+            z-index: 1000;
+            color: #222;
+            max-width: 27rem;
+            background: rgba(255,255,255,0.5);
+            background: rgba(138, 189, 255, 0.04);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border-radius: 10px;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            padding: 2rem 4rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .card {
+            transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+        }
+
+        .card:hover {
+            transform: translateY(-5px); /* slight upward movement */
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2); /* deeper shadow on hover */
+        }
+
+        h1 {
+            font-size: 48px; margin-bottom: 10px;
+            font-family: "DM Serif Display", serif;
+  font-weight: 400;
+  font-style: normal;
+
+        }
+        h2 {
+            font-size: 24px; font-weight: normal;
+        }
+
+    </style>
+</head>
+
+<body>
+    <canvas id="canvas"></canvas>
+    <script>
+            const canvas = document.getElementById('canvas');
+            const ctx = canvas.getContext('2d');
+
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+
+            const columns = Math.floor(canvas.width / 20);
+            const drops = [];
+
+            for (let i = 0; i < columns; i++) {
+                drops[i] = 1;
+            }
+
+            const characters = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ123456789@#$%^&*()';
+
+            function draw() {
+                ctx.fillStyle = 'rgba(255, 255, 255, 0.1)';
+                ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+                ctx.fillStyle = 'rgba(137, 207, 240, 0.8)'; // Baby blue color
+                ctx.font = '15px monospace';
+
+                for (let i = 0; i < drops.length; i++) {
+                    const text = characters[Math.floor(Math.random() * characters.length)];
+                    ctx.fillText(text, i * 20, drops[i] * 20);
+
+                    if (drops[i] * 20 > canvas.height && Math.random() > 0.975) {
+                        drops[i] = 0;
+                    }
+
+                    drops[i]++;
+                }
+            }
+
+            setInterval(draw, 33);
+
+            window.addEventListener('resize', () => {
+                canvas.width = window.innerWidth;
+                canvas.height = window.innerHeight;
+            });
+
+            // Custom cursor setup
+            function setupCustomCursor() {
+                const cursorImg = new Image();
+                cursorImg.src = '/logo.png';
+                cursorImg.onload = function () {
+                    const cursorCanvas = document.createElement('canvas');
+                    cursorCanvas.width = 64;
+                    cursorCanvas.height = 64;
+                    const cursorCtx = cursorCanvas.getContext('2d');
+                    cursorCtx.drawImage(cursorImg, 0, 0, 64, 64);
+                    const cursorDataURL = cursorCanvas.toDataURL();
+                    document.body.style.cursor = `url('${cursorDataURL}') 16 16, auto`;
+                };
+            }
+
+            setupCustomCursor();
+    </script>
+
+    <header>
+        <img src="/logo.png" alt="ausbuildors logo" style="max-width: 120px;">
+        <h1 style="margin-top: 0.5rem;">ausbuildooors</h1>
+        <h2><b>australian crypto builders community.</b></h2>
+        <div style="text-align: left;">
+            <h2><b>purpose</b>: helping each other out, connecting crypto larrikins.</h2>
+            <h2>250+ members. <br>one group chat. <i>no suits allowed</i>.</h2>
+            <h2>monthly Sydney meetups since DEC'22</h2>
+            <h2><b>friends</b>: <a href="https://www.helixcollective.com/">Helix Collective</a>, <a href="https://www.upsidedao.com.au/">Upside DAO</a>, <a href="https://www.ethsydney.net/">ethsydney</a>, <a href="https://ethmelbourne.co/">ethmelbs</a>, <a href="https://halaskastudio.com/">HalaskaStudio</a></h2>
+            <h2><b>incubating</b>: byron bay network state, <a href="https://imfer.lol/">IMF</a></h2>
+        </div>
+        
+        <!-- <hr> -->
+            <!-- image gallery -->
+            <!-- <h2>gallery</h2> -->
+            <style>
+                .gallery {
+                    display: grid;
+                    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+                    gap: 10px;
+
+                    /* center */
+                    margin: 0 auto;
+                    max-width: 800px;
+
+                }
+                img {
+                    height: auto;
+                    border-radius: 5px;
+                }
+
+            </style>
+
+
+            <!-- <div class="gallery">
+                <img src="/media/image1.jpeg" alt="ausbuildors meetup">
+                <img src="/media/image3.png" alt="ausbuildors meetup">
+                <img src="/media/image2.png" alt="ausbuildors meetup">
+            </div> -->
+        
+        
+            <!-- <hr> -->
+    </header>
+    <!-- <div>
+            <center>
+                <img src="/media/network.png" style="max-width: 500px" alt="ausbuildors meetup">
+            </center>
+    </div> -->
+</body>
+
+</html>

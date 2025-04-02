@@ -4,19 +4,45 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ausbuildors</title>
+    <title>Ausbuildors</title>
+
+
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:site" content="@ausbuildoooors">
+    <meta name="twitter:title" content="Aus Buildors">
+    <meta name="twitter:description"
+        content="350+ member Australia crypto builder community, monthly Sydney/Brisbane meets">
+    <meta name="twitter:image" content="https://ausbuildors.liamz.co/logo.png">
+
+
     <style>
         @import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&display=swap');
+
+        html {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  font-variant-ligatures: common-ligatures;
+}
 
         body {
             margin: 0;
             padding: 0;
             background-color: white;
-            overflow: hidden;
-            cursor: url('/logo.png') 64 64, auto;
+            /* cursor: url('/logo.png') 64 64, auto; */
             font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
             font-size: 20%;
         }
+
+        body {
+            cursor: url('/media/cursor.png') 16 16, auto;
+        }
+
+        a, button, [role="button"], .pointer {
+            cursor: url('/media/cursor-pouring.png') 16 16, pointer;
+        }
+
+
         #canvas {
             display: block;
             position: fixed;
@@ -32,15 +58,15 @@
         }
 
         header {
-            position: fixed;
-            top: 40%;
-            left: 50%;
-            transform: translate(-50%, -50%);
+            margin: 0 auto;
+            margin-top: 3rem;
+            margin-bottom: 6rem;
+
             text-align: center;
             color: rgba(137, 207, 240, 0.8);
             z-index: 1000;
             color: #222;
-            max-width: 27rem;
+            max-width: 44rem;
             background: rgba(255,255,255,0.5);
             background: rgba(138, 189, 255, 0.04);
             backdrop-filter: blur(10px);
@@ -49,6 +75,8 @@
             border: 1px solid rgba(255, 255, 255, 0.3);
             padding: 2rem 4rem;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+
+            /*  */
         }
 
         .card {
@@ -63,89 +91,170 @@
         h1 {
             font-size: 48px; margin-bottom: 10px;
             font-family: "DM Serif Display", serif;
-  font-weight: 400;
-  font-style: normal;
-
+            font-weight: 400;
+            font-style: normal;
         }
         h2 {
             font-size: 24px; font-weight: normal;
         }
+        
+        a {
+            color: #2200cc;
+            transition: color .1s ease-in-out;
+        }
 
+        a:visited {
+            color: #2200cc;
+        }
+
+a:hover {
+  color: #FFD700; /* Stronger yellow */
+}
     </style>
 </head>
 
 <body>
     <canvas id="canvas"></canvas>
-    <script>
-            const canvas = document.getElementById('canvas');
-            const ctx = canvas.getContext('2d');
+<script>
+    const canvas = document.getElementById('canvas');
+    const ctx = canvas.getContext('2d');
 
-            canvas.width = window.innerWidth;
-            canvas.height = window.innerHeight;
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
 
-            const columns = Math.floor(canvas.width / 20);
-            const drops = [];
+    const columns = Math.floor(canvas.width / 20);
+    const drops = [];
 
-            for (let i = 0; i < columns; i++) {
-                drops[i] = 1;
+    for (let i = 0; i < columns; i++) {
+        drops[i] = 1;
+    }
+
+    const characters = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ123456789@#$%^&*()';
+
+    function draw() {
+        ctx.fillStyle = 'rgba(255, 255, 255, 0.1)';
+        ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+        ctx.fillStyle = 'rgba(137, 207, 240, 0.8)';
+        ctx.font = '15px monospace';
+
+        for (let i = 0; i < drops.length; i++) {
+            const text = characters[Math.floor(Math.random() * characters.length)];
+            ctx.fillText(text, i * 20, drops[i] * 20);
+
+            if (drops[i] * 20 > canvas.height && Math.random() > 0.975) {
+                drops[i] = 0;
             }
 
-            const characters = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ123456789@#$%^&*()';
+            drops[i]++;
+        }
+    }
 
-            function draw() {
-                ctx.fillStyle = 'rgba(255, 255, 255, 0.1)';
-                ctx.fillRect(0, 0, canvas.width, canvas.height);
+    setInterval(draw, 33);
 
-                ctx.fillStyle = 'rgba(137, 207, 240, 0.8)'; // Baby blue color
-                ctx.font = '15px monospace';
+    window.addEventListener('resize', () => {
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+    });
 
-                for (let i = 0; i < drops.length; i++) {
-                    const text = characters[Math.floor(Math.random() * characters.length)];
-                    ctx.fillText(text, i * 20, drops[i] * 20);
+    // Custom cursor setup
+    function setupCustomCursor() {
+        const defaultCursor = new Image();
+        defaultCursor.src = '/media/vegemite_cursor_32x32.png';
 
-                    if (drops[i] * 20 > canvas.height && Math.random() > 0.975) {
-                        drops[i] = 0;
-                    }
+        const hoverCursor = new Image();
+        hoverCursor.src = '/media/vegemite_funny_cursor.png';
 
-                    drops[i]++;
-                }
-            }
+        Promise.all([
+            new Promise(res => defaultCursor.onload = res),
+            new Promise(res => hoverCursor.onload = res)
+        ]).then(() => {
+            const makeCursorDataURL = (img) => {
+                const cursorCanvas = document.createElement('canvas');
+                cursorCanvas.width = 32;
+                cursorCanvas.height = 32;
+                const ctx = cursorCanvas.getContext('2d');
+                ctx.drawImage(img, 0, 0, 32, 32);
+                return cursorCanvas.toDataURL();
+            };
 
-            setInterval(draw, 33);
+            const defaultCursorURL = makeCursorDataURL(defaultCursor);
+            const hoverCursorURL = makeCursorDataURL(hoverCursor);
 
-            window.addEventListener('resize', () => {
-                canvas.width = window.innerWidth;
-                canvas.height = window.innerHeight;
+            document.body.style.cursor = `url('${defaultCursorURL}') 16 16, auto`;
+
+            document.body.addEventListener('mouseover', () => {
+                document.body.style.cursor = `url('${hoverCursorURL}') 16 16, pointer`;
             });
 
-            // Custom cursor setup
-            function setupCustomCursor() {
-                const cursorImg = new Image();
-                cursorImg.src = '/logo.png';
-                cursorImg.onload = function () {
-                    const cursorCanvas = document.createElement('canvas');
-                    cursorCanvas.width = 64;
-                    cursorCanvas.height = 64;
-                    const cursorCtx = cursorCanvas.getContext('2d');
-                    cursorCtx.drawImage(cursorImg, 0, 0, 64, 64);
-                    const cursorDataURL = cursorCanvas.toDataURL();
-                    document.body.style.cursor = `url('${cursorDataURL}') 16 16, auto`;
-                };
-            }
+            document.body.addEventListener('mouseout', () => {
+                document.body.style.cursor = `url('${defaultCursorURL}') 16 16, auto`;
+            });
+        });
+    }
 
-            setupCustomCursor();
-    </script>
+    // setupCustomCursor();
+</script>
+
+
+    <script src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 
     <header>
+
         <img src="/logo.png" alt="ausbuildors logo" style="max-width: 120px;">
-        <h1 style="margin-top: 0.5rem;">ausbuildooors</h1>
-        <h2><b>australian crypto builders community.</b></h2>
+        <h1 style="margin-top: 0.5rem; margin-bottom: 0.5rem;">Aus Buildooors</h1>
+        <h2 style="margin-top: 0;"><b>Australian crypto builders community.</b></h2>
+        
         <div style="text-align: left;">
-            <h2><b>purpose</b>: helping each other out, connecting crypto larrikins.</h2>
-            <h2>250+ members. <br>one group chat. <i>no suits allowed</i>.</h2>
-            <h2>monthly Sydney meetups since DEC'22</h2>
-            <h2><b>friends</b>: <a href="https://www.helixcollective.com/">Helix Collective</a>, <a href="https://www.upsidedao.com.au/">Upside DAO</a>, <a href="https://www.ethsydney.net/">ethsydney</a>, <a href="https://ethmelbourne.co/">ethmelbs</a>, <a href="https://halaskastudio.com/">HalaskaStudio</a></h2>
-            <h2><b>incubating</b>: byron bay network state, <a href="https://imfer.lol/">IMF</a></h2>
+            <h2><b>Purpose</b>: helping each other out, connecting crypto larrikins.</h2>
+            
+            <h2>350+ members. <br>One group chat. <i>no suits allowed</i>.<br/>Monthly Sydney meetups since December 2022.<br/>Now featured in Brisbane.</h2>
+            
+            <h2><b>Friends</b>: <a href="https://www.helixcollective.com/">Helix Collective</a>, <a href="https://www.upsidedao.com.au/">Upside DAO</a>, <a href="https://www.ethsydney.net/">ETHSydney</a>, <a href="https://ethmelbourne.co/">ETHMelbs</a>, <a href="https://halaskastudio.com/">Halaska Studio</a></h2>
+            
+            <h2><b>Sponsors</b>: <a href="https://www.helixcollective.com/">Helix Collective</a>, <a href="https://x.com/Starknet/">Starknet</a></h2>
+
+            <h2><b>Links</b>: <a href="https://x.com/ausbuildooors">Twitter</a></h2>
+
+            <img src="/media/helix-talks.png" style="max-width: 100%;"/>
+
+            <blockquote class="twitter-tweet">
+                <p lang="en" dir="ltr">good vibes at <a
+                        href="https://twitter.com/ausbuildooors?ref_src=twsrc%5Etfw">@ausbuildooors</a> event tonight <br><br>first
+                    time i&#39;ve ever been to an aussie Crypto event as an aussie 😓<br><br>the chad <a
+                        href="https://twitter.com/stableshaman?ref_src=twsrc%5Etfw">@stableshaman</a> - presented fun idea for
+                    &quot;Priceline&quot; / some ideas to dunk on ppl / link social history with historical market movements (could
+                    turn into… <a href="https://t.co/M26XZ0EXex">pic.twitter.com/M26XZ0EXex</a></p>&mdash; safetyBot 🍚⛓️
+                (@degenRobot) <a href="https://twitter.com/degenRobot/status/1884943324236386316?ref_src=twsrc%5Etfw">January 30,
+                    2025</a>
+            </blockquote>
+
+            <blockquote class="twitter-tweet">
+                <p lang="en" dir="ltr">An amazing double-meet with Sydney+Brisbane <a
+                        href="https://twitter.com/ausbuildooors?ref_src=twsrc%5Etfw">@ausbuildooors</a> - <a
+                        href="https://twitter.com/gamiwtf?ref_src=twsrc%5Etfw">@gamiwtf</a> presented <a
+                        href="https://twitter.com/intlmemefund?ref_src=twsrc%5Etfw">@intlmemefund</a>&#39;s credit cartel, Josh
+                    discussed <a href="https://twitter.com/hashtag/Moosh?src=hash&amp;ref_src=twsrc%5Etfw">#Moosh</a>, and yours
+                    truly shared exciting <a
+                        href="https://twitter.com/hashtag/Starknet?src=hash&amp;ref_src=twsrc%5Etfw">#Starknet</a> updates and
+                    opportunities. Great to hang w/ <a href="https://twitter.com/jzgulati?ref_src=twsrc%5Etfw">@jzgulati</a> from <a
+                        href="https://twitter.com/renprotocol?ref_src=twsrc%5Etfw">@renprotocol</a>! <a
+                        href="https://t.co/j6rKggugfw">https://t.co/j6rKggugfw</a></p>&mdash; Casey Wescott (@CaseyWescott) <a
+                    href="https://twitter.com/CaseyWescott/status/1905746701702611227?ref_src=twsrc%5Etfw">March 28, 2025</a>
+            </blockquote>
+            
+            <blockquote class="twitter-tweet">
+                <p lang="en" dir="ltr">thanks to everyone who came to our inaugural Brisbane <a
+                        href="https://twitter.com/ausbuildooors?ref_src=twsrc%5Etfw">@ausbuildooors</a> meet! <br><br>some
+                    highlights for me:<br>- <a
+                        href="https://twitter.com/harrydelltaxlaw?ref_src=twsrc%5Etfw">@harrydelltaxlaw</a>&#39;s new venture - <a
+                        href="https://twitter.com/BSMoneyOfficial?ref_src=twsrc%5Etfw">@BSMoneyOfficial</a>, an reg-compliant AUD
+                    on/offramp platform (finally)<br>- energy grid arb&#39;d bitcoin mining farm in Tasmania <a
+                        href="https://t.co/g2dvGmvZCP">pic.twitter.com/g2dvGmvZCP</a></p>&mdash; Liam Zebedee (@liamzebedee) <a
+                    href="https://twitter.com/liamzebedee/status/1906527812389163340?ref_src=twsrc%5Etfw">March 31, 2025</a>
+            </blockquote>
+
+            <!-- <h2><b>incubating</b>: byron bay network state, <a href="https://imfer.lol/">IMF</a></h2> -->
         </div>
         
         <!-- <hr> -->

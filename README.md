@@ -7,6 +7,8 @@ This is the website source code for the [Ausbuildors community](https://twitter.
 
 Anyone is allowed to contribute and add what they want.
 
+Run `python3 server.py` to view website. There are no frameworks.
+
 ## Hosting.
 
 Hosted at https://ausbuildors.liamz.co

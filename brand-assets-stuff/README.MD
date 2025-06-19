@@ -3,22 +3,22 @@ Branding and assets
 
 ## Logos.
 
-[](./brand-logo-transparent-bg.png)
+![](./brand-logo-transparent-bg.png)
 
-[](./events-logo.jpg)
+![](./events-logo.jpg)
 
 ## Memes.
 
-[](./meme-boganlol-2.png)
+![](./meme-boganlol-2.png)
 
-[](./meme-uluru.png)
+![](./meme-uluru.png)
 
-[](./meme-ghibli-helix.jpg)
+![](./meme-ghibli-helix.jpg)
 
 ## Sponsors.
 
-[](./sponsor-helix-xo.jpg)
+![](./sponsor-helix-xo.jpg)
 
-[](./sponsor-starknet-xo.jpg)
+![](./sponsor-starknet-xo.jpg)
 
 

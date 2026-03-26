@@ -3,17 +3,17 @@
 :root {
   --bg: #fafaf8;
   --bg-card: #ffffff;
-  --text: #1a1a1a;
-  --text-muted: #4a4a4a;
+  --text: #2a2a2a;
+  --text-muted: #5c5c5c;
   --accent: #d4a017;
   --accent-hover: #b8860b;
-  --brown: #3d1c00;
+  --brown: #4a2810;
   --red: #c41e3a;
   --border: #e8e5e0;
   --nav-bg: rgba(250, 250, 248, 0.85);
-  --shadow-sm: 0 1px 3px rgba(0,0,0,0.06);
-  --shadow-md: 0 4px 16px rgba(0,0,0,0.08);
-  --shadow-lg: 0 8px 32px rgba(0,0,0,0.1);
+  --shadow-sm: 0 1px 3px rgba(0,0,0,0.04);
+  --shadow-md: 0 4px 16px rgba(0,0,0,0.06);
+  --shadow-lg: 0 8px 32px rgba(0,0,0,0.07);
   --radius: 12px;
   --max-width: 1080px;
 }
@@ -279,7 +279,7 @@ a:hover {
 }
 
 .btn-primary:hover {
-  background: #2a1200;
+  background: #3a2010;
   color: #fff;
   transform: translateY(-1px);
   box-shadow: var(--shadow-md);

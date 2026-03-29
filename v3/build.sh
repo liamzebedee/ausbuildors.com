@@ -17,5 +17,6 @@ bun build \
 cp -rL assets/ build/assets/
 cp -L logo.png build/logo.png
 cp -rL media/ build/media/
+cp og-image.jpg build/og-image.jpg
 
 echo "Build complete -> build/"

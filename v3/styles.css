@@ -29,7 +29,6 @@ html {
   -moz-osx-font-smoothing: grayscale;
   text-rendering: optimizeLegibility;
   scroll-behavior: smooth;
-  touch-action: manipulation;
 }
 
 body {
@@ -118,86 +117,26 @@ nav .nav-links a.active {
   background: none;
   border: none;
   padding: 0.5rem;
-  width: 40px;
-  height: 40px;
-  position: relative;
-  z-index: 110;
-}
-
-.hamburger-icon,
-.hamburger-icon::before,
-.hamburger-icon::after {
-  display: block;
-  width: 22px;
-  height: 2px;
-  background: var(--text);
-  border-radius: 2px;
-  transition: all 0.3s ease;
-}
-
-.hamburger-icon {
-  position: relative;
-}
-
-.hamburger-icon::before,
-.hamburger-icon::after {
-  content: '';
-  position: absolute;
-  left: 0;
-}
-
-.hamburger-icon::before { top: -7px; }
-.hamburger-icon::after { top: 7px; }
-
-.nav-toggle.open .hamburger-icon {
-  background: transparent;
-}
-
-.nav-toggle.open .hamburger-icon::before {
-  top: 0;
-  transform: rotate(45deg);
-}
-
-.nav-toggle.open .hamburger-icon::after {
-  top: 0;
-  transform: rotate(-45deg);
+  font-size: 1.5rem;
+  color: var(--text);
 }
 
 @media (max-width: 640px) {
-  .nav-toggle {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
+  .nav-toggle { display: block; }
   nav .nav-links {
-    position: fixed;
-    top: 0;
+    display: none;
+    position: absolute;
+    top: 64px;
     left: 0;
-    width: 100vw;
-    height: 100vh;
-    height: 100dvh;
+    right: 0;
     flex-direction: column;
-    align-items: center;
-    justify-content: flex-start;
-    padding-top: 96px;
-    gap: 0.5rem;
-    background: var(--bg);
-    z-index: 105;
-    opacity: 0;
-    visibility: hidden;
-    transform: translateY(-20px);
-    transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s ease;
+    background: var(--nav-bg);
+    backdrop-filter: blur(16px);
+    border-bottom: 1px solid var(--border);
+    padding: 0.5rem 1rem;
   }
-  nav .nav-links.open {
-    display: flex;
-    opacity: 1;
-    visibility: visible;
-    transform: translateY(0);
-  }
-  nav .nav-links a {
-    padding: 1rem 2rem;
-    font-size: 1.25rem;
-  }
+  nav .nav-links.open { display: flex; }
+  nav .nav-links a { padding: 0.75rem 1rem; }
 }
 
 /* ---- LAYOUT ---- */

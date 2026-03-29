@@ -10,6 +10,7 @@ bun build \
   about.html \
   members.html \
   expertise.html \
+  --production \
   --outdir=build \
   --minify
 

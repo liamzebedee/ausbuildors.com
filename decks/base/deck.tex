@@ -1,0 +1,339 @@
+\documentclass[aspectratio=169,12pt]{beamer}
+
+\usepackage{fontspec}
+\usepackage{graphicx}
+\usepackage{tikz}
+\usepackage{booktabs}
+\usepackage{xcolor}
+\usepackage{hyperref}
+\usepackage{fontawesome5}
+\usepackage{ragged2e}
+
+% --- Colors ---
+\definecolor{bg}{HTML}{FFFFFF}
+\definecolor{bgcard}{HTML}{F4F1ED}
+\definecolor{accent}{HTML}{B8784E}
+\definecolor{textdark}{HTML}{1A1714}
+\definecolor{textmid}{HTML}{6B6560}
+\definecolor{textlight}{HTML}{9E9893}
+\definecolor{divider}{HTML}{E5E0DA}
+
+% --- Theme ---
+\usetheme{default}
+\setbeamercolor{background canvas}{bg=bg}
+\setbeamercolor{normal text}{fg=textdark}
+\setbeamertemplate{navigation symbols}{}
+\setbeamertemplate{footline}{}
+\setbeamertemplate{frametitle}{}
+
+% --- Fonts ---
+\setsansfont{TeX Gyre Heros}[
+  BoldFont=TeX Gyre Heros Bold,
+  ItalicFont=TeX Gyre Heros Italic,
+]
+
+% --- Helpers ---
+\newcommand{\seclabel}[1]{%
+  \textcolor{accent}{\footnotesize\addfontfeatures{LetterSpace=5}\MakeUppercase{#1}}%
+}
+
+% Prevent hyphenation globally
+\tolerance=1
+\emergencystretch=\maxdimen
+\hyphenpenalty=10000
+\hbadness=10000
+
+% ============================================================
+\begin{document}
+
+% --- 1. TITLE ---
+\begin{frame}[plain]
+\begin{tikzpicture}[remember picture,overlay]
+  \fill[bg] (current page.south west) rectangle (current page.north east);
+  \node[anchor=center] at ([yshift=1.6cm]current page.center) {%
+    \includegraphics[width=2cm]{../../v3/logo.png}%
+  };
+  \node[anchor=center, text width=14cm, align=center] at ([yshift=-0.4cm]current page.center) {%
+    {\fontsize{34}{38}\selectfont\textcolor{textdark}{\textbf{Aus Buildooors}}}\\[6pt]
+    {\large\textcolor{textmid}{Australia's largest grassroots crypto builder community}}%
+  };
+  \node[anchor=center] at ([yshift=-2.6cm]current page.center) {%
+    \begin{tikzpicture}
+      \foreach \val/\lab/\xpos in {460+/members/0, 49+/meetups/3.5, 2/cities/7, \$0/to build this/10.5} {
+        \node[anchor=west] at (\xpos,0) {\textcolor{accent}{\fontsize{26}{30}\selectfont\textbf{\val}}};
+        \node[anchor=west] at (\xpos,-0.55) {\textcolor{textlight}{\scriptsize\MakeUppercase{\lab}}};
+      }
+    \end{tikzpicture}%
+  };
+  \node[anchor=south, text width=14cm, align=center] at ([yshift=0.5cm]current page.south) {%
+    \textcolor{textlight}{\footnotesize Sponsorship Deck \quad\textbar\quad @ausbuildooors}%
+  };
+\end{tikzpicture}
+\end{frame}
+
+% --- 2. THE OPPORTUNITY ---
+\begin{frame}[plain]
+\begin{tikzpicture}[remember picture,overlay]
+  \fill[bg] (current page.south west) rectangle (current page.north east);
+
+  \node[anchor=north west, text width=13cm] at ([xshift=1.4cm, yshift=-0.8cm]current page.north west) {%
+    \seclabel{The Opportunity}\\[4pt]
+    {\fontsize{24}{28}\selectfont\textcolor{textdark}{\textbf{460+ crypto builders. One room. Every month.}}}%
+  };
+
+  % Three separate cards with clear gaps
+  \node[fill=bgcard, rounded corners=6pt, inner sep=14pt, text width=3.8cm, anchor=north west]
+    at ([xshift=1.4cm, yshift=-3.4cm]current page.north west) {%
+    \RaggedRight
+    \textcolor{accent}{\fontsize{32}{36}\selectfont\textbf{40+}}\\[2pt]
+    {\small\textcolor{textdark}{\textbf{builders per meetup}}}\\[4pt]
+    {\scriptsize\textcolor{textmid}{Devs, founders, researchers, creatives building onchain}}%
+  };
+
+  \node[fill=bgcard, rounded corners=6pt, inner sep=14pt, text width=3.8cm, anchor=north]
+    at ([yshift=-3.4cm]current page.north) {%
+    \RaggedRight
+    \textcolor{accent}{\fontsize{32}{36}\selectfont\textbf{49+}}\\[2pt]
+    {\small\textcolor{textdark}{\textbf{events hosted}}}\\[4pt]
+    {\scriptsize\textcolor{textmid}{Monthly since Nov 2022. Sydney and Brisbane. Never missed one.}}%
+  };
+
+  \node[fill=bgcard, rounded corners=6pt, inner sep=14pt, text width=3.8cm, anchor=north east]
+    at ([xshift=-1.4cm, yshift=-3.4cm]current page.north east) {%
+    \RaggedRight
+    \textcolor{accent}{\fontsize{32}{36}\selectfont\textbf{3}}\\[2pt]
+    {\small\textcolor{textdark}{\textbf{current sponsors}}}\\[4pt]
+    {\scriptsize\textcolor{textmid}{StarkWare Industries, Helix Collective, Solana Foundation}}%
+  };
+
+\end{tikzpicture}
+\end{frame}
+
+% --- 3. TRACK RECORD ---
+\begin{frame}[plain]
+\begin{tikzpicture}[remember picture,overlay]
+  \fill[bg] (current page.south west) rectangle (current page.north east);
+
+  \node[anchor=north west, text width=13cm] at ([xshift=1.4cm, yshift=-0.8cm]current page.north west) {%
+    \seclabel{Track Record}\\[4pt]
+    {\fontsize{24}{28}\selectfont\textcolor{textdark}{\textbf{Organic growth. Zero dollars spent.}}}%
+  };
+
+  % Timeline - shorter, fits within margins
+  \node[anchor=center] at ([yshift=0.4cm]current page.center) {%
+    \begin{tikzpicture}
+      \draw[divider, line width=2pt] (0,0) -- (11.5,0);
+
+      \foreach \xpos/\label/\desc in {%
+        0/{Nov 2022}/{First meetup, Sydney},
+        2.9/{2024}/{350 members organically},
+        5.8/{Sponsors}/{StarkWare, Helix, Solana},
+        8.6/{Mar 2025}/{Brisbane launched},
+        11.5/{Today}/{460+ members, 2 cities}%
+      } {
+        \fill[accent] (\xpos,0) circle (4pt);
+        \node[anchor=south, text width=2.2cm, align=center] at (\xpos,0.25) {%
+          \scriptsize\textcolor{textdark}{\textbf{\label}}%
+        };
+        \node[anchor=north, text width=2.2cm, align=center] at (\xpos,-0.25) {%
+          \scriptsize\textcolor{textmid}{\desc}%
+        };
+      }
+    \end{tikzpicture}%
+  };
+
+  % Bottom proof points - three separate cards
+  \node[fill=bgcard, rounded corners=6pt, inner sep=10pt, text width=3.6cm, anchor=south west]
+    at ([xshift=1.4cm, yshift=0.8cm]current page.south west) {%
+    \RaggedRight
+    \textcolor{accent}{\faHome}\ \ {\small\textcolor{textdark}{\textbf{4 venues survived}}}\\[2pt]
+    {\scriptsize\textcolor{textmid}{Zora, Immutable, King River Capital, Helix Collective}}%
+  };
+
+  \node[fill=bgcard, rounded corners=6pt, inner sep=10pt, text width=3.6cm, anchor=south]
+    at ([yshift=0.8cm]current page.south) {%
+    \RaggedRight
+    \textcolor{accent}{\faHeart}\ \ {\small\textcolor{textdark}{\textbf{Culture at scale}}}\\[2pt]
+    {\scriptsize\textcolor{textmid}{``Favourite crypto builders group in Australia''}}%
+  };
+
+  \node[fill=bgcard, rounded corners=6pt, inner sep=10pt, text width=3.6cm, anchor=south east]
+    at ([xshift=-1.4cm, yshift=0.8cm]current page.south east) {%
+    \RaggedRight
+    \textcolor{accent}{\faBolt}\ \ {\small\textcolor{textdark}{\textbf{Cockroach mentality}}}\\[2pt]
+    {\scriptsize\textcolor{textmid}{Built entirely on \$0. Pure organic hustle.}}%
+  };
+
+\end{tikzpicture}
+\end{frame}
+
+% --- 4. WHO'S IN THE ROOM ---
+\begin{frame}[plain]
+\begin{tikzpicture}[remember picture,overlay]
+  \fill[bg] (current page.south west) rectangle (current page.north east);
+
+  \node[anchor=north west, text width=13cm] at ([xshift=1.4cm, yshift=-0.8cm]current page.north west) {%
+    \seclabel{The Network}\\[4pt]
+    {\fontsize={24}{28}\selectfont\textcolor{textdark}{\textbf{Who's in the room}}}%
+  };
+
+  % 4x3 grid - wider cards, less padding
+  \foreach \name/\desc/\col/\row in {%
+    Rise Labs/Ethereum L2/0/0,
+    Garden Finance/Bitcoin DeFi/1/0,
+    Session/Encrypted messaging/2/0,
+    Ethstrat/ETH treasury/3/0,
+    SIGINTZERO/Crypto auditing/0/1,
+    Cadena Legal/Crypto law \& tax/1/1,
+    Helix Collective/Venture studio/2/1,
+    Halaska Studio/Product design/3/1,
+    Blacksheep Money/AUD on\slash offramp/0/2,
+    Underware/Onchain gaming/1/2,
+    Loot Realms/Onchain worlds/2/2,
+    ETHSydney/Community/3/2%
+  } {
+    \node[fill=bgcard, rounded corners=4pt, inner sep=7pt, text width=2.9cm,
+          minimum height=1.2cm, anchor=north west]
+      at ([xshift={1.4cm+\col*3.4cm}, yshift={-2.8cm-\row*1.65cm}]current page.north west) {%
+      \RaggedRight
+      {\footnotesize\textcolor{textdark}{\textbf{\name}}}\\[1pt]
+      {\scriptsize\textcolor{textmid}{\desc}}%
+    };
+  }
+
+  \node[anchor=south east] at ([xshift=-1.4cm, yshift=0.8cm]current page.south east) {%
+    \textcolor{textlight}{\scriptsize + ETHMelbourne, gami.eth, and many more}%
+  };
+
+\end{tikzpicture}
+\end{frame}
+
+% --- 5. SPEAKERS ---
+\begin{frame}[plain]
+\begin{tikzpicture}[remember picture,overlay]
+  \fill[bg] (current page.south west) rectangle (current page.north east);
+
+  \node[anchor=north west, text width=13cm] at ([xshift=1.4cm, yshift=-0.8cm]current page.north west) {%
+    \seclabel{Speaker Calibre}\\[4pt]
+    {\fontsize{24}{28}\selectfont\textcolor{textdark}{\textbf{Who takes our stage}}}%
+  };
+
+  % 3x2 grid of speaker cards
+  \foreach \name/\org/\note/\col/\row in {%
+    Andrew Miller/Ethereum Foundation/PSE team/0/0,
+    Casey Wescott/Fleet Foxes/Grammy-nominated/1/0,
+    Sam Battenally/RISE Labs/Vitalik-seeded/2/0,
+    Andrew Lunardi/Magic Money/Published author/0/1,
+    Jaz Gulati/Garden Finance/Bitcoin DeFi/1/1,
+    Clouted.eth/ETHStrategy/ETH treasury/2/1%
+  } {
+    \node[fill=bgcard, rounded corners=5pt, inner sep=11pt, text width=3.8cm,
+          minimum height=1.6cm, anchor=north west]
+      at ([xshift={1.4cm+\col*4.55cm}, yshift={-2.8cm-\row*2.3cm}]current page.north west) {%
+      \RaggedRight
+      {\normalsize\textcolor{textdark}{\textbf{\name}}}\\[2pt]
+      {\small\textcolor{accent}{\org}}\\[2pt]
+      {\scriptsize\textcolor{textmid}{\note}}%
+    };
+  }
+
+  \node[anchor=south west] at ([xshift=1.4cm, yshift=0.8cm]current page.south west) {%
+    \textcolor{textlight}{\scriptsize New speakers present at every meetup.}%
+  };
+
+\end{tikzpicture}
+\end{frame}
+
+% --- 6. WHAT SPONSORS GET ---
+\begin{frame}[plain]
+\begin{tikzpicture}[remember picture,overlay]
+  \fill[bg] (current page.south west) rectangle (current page.north east);
+
+  \node[anchor=north west, text width=13cm] at ([xshift=1.4cm, yshift=-0.8cm]current page.north west) {%
+    \seclabel{Sponsorship}\\[4pt]
+    {\fontsize{24}{28}\selectfont\textcolor{textdark}{\textbf{What you get}}}%
+  };
+
+  % Left column - 4 benefit rows, compact
+  \node[anchor=north west] at ([xshift=1.4cm, yshift=-2.8cm]current page.north west) {%
+    \begin{tikzpicture}
+      \foreach \icon/\tit/\desc/\ypos in {%
+        \faBullhorn/Brand at every event/Logo on comms, signage, socials/0,
+        \faMicrophone/Speaking slot/Present to 40+ builders monthly/1.5,
+        \faUsers/Talent pipeline/Recruit from Australia's best/3.0,
+        \faComments/Chat visibility/Access to 460+ member group/4.5%
+      } {
+        \node[fill=bgcard, circle, minimum size=0.8cm, inner sep=0pt] at (0,-\ypos) {\textcolor{accent}{\icon}};
+        \node[anchor=west, text width=5.5cm] at (0.7,-\ypos+0.12) {\small\textcolor{textdark}{\textbf{\tit}}};
+        \node[anchor=west, text width=5.5cm] at (0.7,-\ypos-0.18) {\scriptsize\textcolor{textmid}{\desc}};
+      }
+    \end{tikzpicture}%
+  };
+
+  % Right column - reach card
+  \node[fill=bgcard, rounded corners=8pt, inner sep=16pt, text width=4.8cm, anchor=north east]
+    at ([xshift=-1.4cm, yshift=-2.8cm]current page.north east) {%
+    \RaggedRight
+    {\large\textcolor{textdark}{\textbf{Your reach}}}\\[10pt]
+    \textcolor{accent}{\fontsize{26}{30}\selectfont\textbf{460+}}\ {\small\textcolor{textmid}{members}}\\[6pt]
+    \textcolor{accent}{\fontsize{26}{30}\selectfont\textbf{40+}}\ {\small\textcolor{textmid}{per event}}\\[6pt]
+    \textcolor{accent}{\fontsize{26}{30}\selectfont\textbf{12+}}\ {\small\textcolor{textmid}{events/year}}\\[6pt]
+    \textcolor{accent}{\fontsize{26}{30}\selectfont\textbf{2}}\ {\small\textcolor{textmid}{cities}}\\[10pt]
+    \textcolor{divider}{\rule{4.3cm}{0.5pt}}\\[6pt]
+    {\scriptsize\textcolor{textmid}{Monthly touchpoints with Australia's most active crypto builders}}%
+  };
+
+\end{tikzpicture}
+\end{frame}
+
+% --- 7. SOCIAL PROOF ---
+\begin{frame}[plain]
+\begin{tikzpicture}[remember picture,overlay]
+  \fill[bg] (current page.south west) rectangle (current page.north east);
+
+  \node[anchor=north west, text width=13cm] at ([xshift=1.4cm, yshift=-0.8cm]current page.north west) {%
+    \seclabel{Social Proof}\\[4pt]
+    {\fontsize{24}{28}\selectfont\textcolor{textdark}{\textbf{Already backed by}}}%
+  };
+
+  % Three well-separated sponsor cards
+  \foreach \name/\sub/\note/\xoff in {%
+    StarkWare/Industries/ZK-rollup pioneer/-4.8,
+    Helix/Collective/Venture studio/0,
+    Solana/Foundation/L1 ecosystem/4.8%
+  } {
+    \node[fill=bgcard, rounded corners=8pt, inner sep=20pt,
+          minimum width=3.6cm, minimum height=3cm, anchor=center]
+      at ([xshift=\xoff cm, yshift=-0.8cm]current page.center) {%
+      \begin{minipage}{3cm}\centering\RaggedRight\centering
+        {\fontsize{18}{22}\selectfont\textcolor{textdark}{\textbf{\name}}}\\[3pt]
+        {\small\textcolor{textmid}{\sub}}\\[8pt]
+        {\scriptsize\textcolor{textlight}{\note}}
+      \end{minipage}%
+    };
+  }
+
+\end{tikzpicture}
+\end{frame}
+
+% --- 8. CTA ---
+\begin{frame}[plain]
+\begin{tikzpicture}[remember picture,overlay]
+  \fill[bg] (current page.south west) rectangle (current page.north east);
+  \node[anchor=center] at ([yshift=2cm]current page.center) {%
+    \includegraphics[width=1.8cm]{../../v3/logo.png}%
+  };
+  \node[anchor=center, text width=12cm, align=center] at ([yshift=0cm]current page.center) {%
+    {\fontsize{30}{36}\selectfont\textcolor{textdark}{\textbf{Sponsor the builders.}}}%
+  };
+  \node[anchor=center, text width=12cm, align=center] at ([yshift=-1.6cm]current page.center) {%
+    {\large\textcolor{accent}{ausbuildors.com}}\\[8pt]
+    {\textcolor{textmid}{\faTwitter\ @ausbuildooors}}%
+  };
+  \node[anchor=south, text width=14cm, align=center] at ([yshift=0.5cm]current page.south) {%
+    \textcolor{textlight}{\footnotesize Proudly Australian since 2022}%
+  };
+\end{tikzpicture}
+\end{frame}
+
+\end{document}

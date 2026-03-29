@@ -5,7 +5,12 @@ interface NavProps {
 }
 
 export function Nav({ activePage }: NavProps) {
-  const toggle = () => document.querySelector(".nav-links")?.classList.toggle("open");
+  const toggle = () => {
+    const nav = document.querySelector(".nav-links");
+    const btn = document.querySelector(".nav-toggle");
+    nav?.classList.toggle("open");
+    btn?.classList.toggle("open");
+  };
 
   return (
     <div className="nav-inner">
@@ -14,7 +19,7 @@ export function Nav({ activePage }: NavProps) {
         <span>Aus Buildooors</span>
       </a>
       <button className="nav-toggle" aria-label="Menu" onClick={toggle}>
-        {"\u2630"}
+        <span className="hamburger-icon"></span>
       </button>
       <div className="nav-links">
         <a href="index.html" className={activePage === "home" ? "active" : ""}>Home</a>

@@ -6,7 +6,6 @@ export const members = [
   { name: "gami.eth", url: "https://x.com/gamiwtf", logo: "gami/icon.png", area: "Builder & growth", type: "person" as const },
   { name: "Ethstrat", url: "https://www.ethstrat.xyz/", logo: "ethstrat/icon.png", area: "ETH treasury protocol", type: "project" as const },
   { name: "ETHMelbourne", url: "https://ethmelbourne.co/", logo: "ethmelbourne/logobrand.png", area: "", type: "project" as const },
-  { name: "Ren Protocol", url: "https://renprotocol.io/", logo: "ren-protocol/logobrand.svg", area: "Cross-chain liquidity", type: "project" as const },
   { name: "SIGINTZERO", url: "https://sigintzero.com/", logo: "sigint-zero/logobrand.png", area: "Crypto auditing firm", type: "project" as const },
   { name: "Underware", url: "https://underware.gg/", logo: "underware/icon.jpg", area: "Onchain gaming", type: "project" as const },
   { name: "Loot Realms / Bibliotica", url: "https://bibliothecadao.xyz/", logo: "loot-realms/logobrand.png", area: "Onchain world-building", type: "project" as const },

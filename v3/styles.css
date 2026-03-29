@@ -253,6 +253,37 @@ a:hover {
   letter-spacing: 0.05em;
 }
 
+.active-indicator {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: #15803d;
+  background: #dcfce7;
+  border: 1px solid #bbf7d0;
+  border-radius: 999px;
+  padding: 0.2rem 0.65rem;
+  margin-top: 0.75rem;
+  letter-spacing: 0.01em;
+}
+
+.active-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #22c55e;
+  box-shadow: 0 0 5px #22c55e88;
+  display: inline-block;
+  flex-shrink: 0;
+  animation: pulse-dot 2s ease-in-out infinite;
+}
+
+@keyframes pulse-dot {
+  0%, 100% { opacity: 1; box-shadow: 0 0 6px #22c55e88; }
+  50% { opacity: 0.6; box-shadow: 0 0 2px #22c55e44; }
+}
+
 .hero .cta-row {
   display: flex;
   justify-content: center;

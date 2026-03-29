@@ -846,6 +846,30 @@ footer a {
   opacity: 0.6;
 }
 
+#pow-container {
+  overflow: visible;
+}
+
+#pow-hash {
+  word-break: break-all;
+}
+
+@media (max-width: 640px) {
+  #pow-chars {
+    font-size: 1rem !important;
+    letter-spacing: 0 !important;
+  }
+
+  #pow-glow.solved::before {
+    width: 250px;
+    height: 100px;
+  }
+
+  #pow-email {
+    flex-wrap: wrap;
+  }
+}
+
 /* ---- FADE IN ANIMATION ---- */
 .fade-in {
   opacity: 0;

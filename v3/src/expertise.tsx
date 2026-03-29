@@ -39,7 +39,7 @@ async function mine() {
   mining.style.opacity = "0";
   // Force reflow then animate open
   mining.offsetHeight;
-  mining.style.maxHeight = "120px";
+  mining.style.maxHeight = "200px";
   mining.style.opacity = "1";
 
   const encoder = new TextEncoder();
@@ -94,6 +94,7 @@ async function mine() {
           const link = document.createElement("a");
           link.href = `mailto:${email}`;
           link.innerHTML = `<span style="color:var(--accent);">${guess}</span><span style="color:var(--text-muted);font-weight:400;">${SUFFIX}</span>`;
+          link.id = "pow-chars";
           link.style.cssText = "position:relative;z-index:1;font-size:1.4rem;letter-spacing:0.05em;color:var(--brown);font-weight:600;text-decoration:none;";
           charsEl.replaceWith(link);
 
@@ -101,7 +102,7 @@ async function mine() {
           const copyBtn = document.createElement("button");
           copyBtn.textContent = "Copy";
           copyBtn.className = "btn btn-outline";
-          copyBtn.style.cssText = "padding:0.4rem 0.9rem;font-size:0.8rem;";
+          copyBtn.style.cssText = "padding:0.4rem 0.9rem;font-size:0.8rem;flex-shrink:0;";
           copyBtn.addEventListener("click", () => {
             navigator.clipboard.writeText(email);
             copyBtn.textContent = "Copied";

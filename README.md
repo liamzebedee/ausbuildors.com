@@ -28,8 +28,18 @@ cd v3 && ./build.sh     # bun build + copy static assets
 npx wrangler deploy      # deploy to Cloudflare
 ```
 
+### Quick iterate
+
+`./iter.sh` builds, commits everything, and pushes in one shot:
+
+```sh
+./iter.sh   # runs v3/build.sh → git add -A → git commit → git push
+```
+
 ## Dev
 
 ```sh
-bun run v3/dev.ts
+bun run v3/dev.ts   # starts dev server on http://localhost:3000
 ```
+
+The dev server serves from `v3/` directly (no build step needed), bundles TSX/TS on the fly, and live-reloads the browser on file changes.

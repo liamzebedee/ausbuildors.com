@@ -2,7 +2,7 @@ Cadena Legal | https://www.cadenalegal.com.au/ | cadena-legal/icon.png | Crypto 
 Blacksheep Money | https://blacksheep.money/ | blacksheep-money/icon.png | AUD crypto on/offramp
 Rise Labs | https://risechain.com/ | rise-labs/icon.png | High-performance Ethereum L2
 Session | https://getsession.org/ | session/icon.png | Decentralised encrypted messaging
-gami.eth | https://x.com/gamiwtf | gami/icon.png | Builder & growth
+gami.eth | https://x.com/gami_vc | gami/icon.png | Builder & growth
 IMF | https://imfer.lol/ | imf/icon.png | International Meme Fund
 Ethstrat | https://www.ethstrat.xyz/ | ethstrat/icon.png | Ethereum treasury protocol
 ETHMelbourne | https://ethmelbourne.co/ | ethmelbourne/logobrand.png | Ethereum Melbourne community

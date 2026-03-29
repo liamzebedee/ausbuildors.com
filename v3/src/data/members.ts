@@ -3,7 +3,7 @@ export const members = [
   { name: "Blacksheep Money", url: "https://blacksheep.money/", logo: "blacksheep-money/icon.png", area: "AUD on/offramp", type: "project" as const },
   { name: "Rise Labs", url: "https://risechain.com/", logo: "rise-labs/logobrand.svg", area: "Ethereum L2", type: "project" as const },
   { name: "Session", url: "https://getsession.org/", logo: "session/icon.png", area: "Encrypted messaging", type: "project" as const },
-  { name: "gami.eth", url: "https://x.com/gamiwtf", logo: "gami/icon.png", area: "Builder & growth", type: "person" as const },
+  { name: "gami.eth", url: "https://x.com/gami_vc", logo: "gami/icon.png", area: "Builder & growth", type: "person" as const },
   { name: "Ethstrat", url: "https://www.ethstrat.xyz/", logo: "ethstrat/icon.png", area: "ETH treasury protocol", type: "project" as const },
   { name: "ETHMelbourne", url: "https://ethmelbourne.co/", logo: "ethmelbourne/logobrand.png", area: "", type: "project" as const },
   { name: "SIGINTZERO", url: "https://sigintzero.com/", logo: "sigint-zero/logobrand.png", area: "Crypto auditing firm", type: "project" as const },

@@ -101,7 +101,7 @@ async function mine() {
           // Add copy button
           const copyBtn = document.createElement("button");
           copyBtn.textContent = "Copy";
-          copyBtn.className = "btn btn-outline";
+          copyBtn.className = "btn btn-outline pow-copy-btn";
           copyBtn.style.cssText = "padding:0.4rem 0.9rem;font-size:0.8rem;flex-shrink:0;";
           copyBtn.addEventListener("click", () => {
             navigator.clipboard.writeText(email);

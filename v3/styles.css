@@ -868,6 +868,10 @@ footer a {
   #pow-email {
     flex-wrap: wrap;
   }
+
+  .pow-copy-btn {
+    display: none;
+  }
 }
 
 /* ---- FADE IN ANIMATION ---- */

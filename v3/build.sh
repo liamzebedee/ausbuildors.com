@@ -9,6 +9,7 @@ bun build \
   index.html \
   about.html \
   members.html \
+  expertise.html \
   --outdir=build \
   --minify
 

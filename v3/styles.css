@@ -795,6 +795,57 @@ footer a {
   box-shadow: var(--shadow-md);
 }
 
+/* ---- POW EMAIL GLOW ---- */
+@keyframes pow-glow-expand {
+  0% {
+    opacity: 0;
+    transform: scale(0.2);
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+#pow-glow {
+  position: relative;
+}
+
+#pow-glow.solved::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 30%;
+  width: 500px;
+  height: 200px;
+  transform: translate(-50%, -50%) scale(1);
+  border-radius: 50%;
+  background: radial-gradient(ellipse at center, rgba(212,160,23,0.18) 0%, rgba(212,160,23,0.06) 35%, transparent 65%);
+  z-index: 0;
+  animation: pow-glow-expand 1.2s cubic-bezier(0.16,1,0.3,1) forwards;
+  pointer-events: none;
+}
+
+#pow-mining {
+  overflow: hidden;
+  transition: max-height 0.4s cubic-bezier(0.16,1,0.3,1), opacity 0.3s ease;
+}
+
+#pow-status-msg {
+  font-size: 0.8rem;
+  color: var(--accent);
+  margin-top: 0.25rem;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+
+#pow-status-msg.visible {
+  opacity: 0.6;
+}
+
 /* ---- FADE IN ANIMATION ---- */
 .fade-in {
   opacity: 0;

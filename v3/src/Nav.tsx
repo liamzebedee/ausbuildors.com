@@ -20,6 +20,7 @@ export function Nav({ activePage }: NavProps) {
         <a href="index.html" className={activePage === "home" ? "active" : ""}>Home</a>
         <a href="about.html" className={activePage === "about" ? "active" : ""}>About</a>
         <a href="members.html" className={activePage === "members" ? "active" : ""}>Members</a>
+        <a href="expertise.html" className={activePage === "expertise" ? "active" : ""}>Expertise</a>
       </div>
     </div>
   );

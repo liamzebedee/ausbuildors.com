@@ -1,0 +1,17 @@
+Objective: Present Ausbuildors well externally
+
+What is Ausbuildors? A Sydney-based community defined in retaliation to the suit-based crypto meetups. The core culture - no suits, builders only, all aussies. There are so many cool people/projects in Australia. 
+If only we had a schelling point.
+
+Target audience: The public.
+
+Homepage:
+- Name, Tagline, Core stats, Call to action (X, Learn more)
+- Our network
+- Featured speakers
+- Recent things (X feed)
+
+Layout:
+- History
+- Past meets
+

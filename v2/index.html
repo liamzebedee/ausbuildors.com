@@ -13,21 +13,22 @@
   <meta property="og:title" content="Aus Buildooors">
   <meta property="og:description" content="Australian crypto builders community. No suits allowed.">
   <meta property="og:image" content="https://ausbuildors.liamz.co/logo.png">
-  <link rel="icon" type="image/png" href="../logo.png">
-  <link rel="stylesheet" href="styles.css">
+  <link rel="icon" type="image/png" href="../logo.png?v=1">
+  <link rel="stylesheet" href="styles.css?v=1">
 </head>
 <body>
 
 <nav>
   <div class="nav-inner">
     <a href="index.html" class="nav-logo">
-      <img src="../logo.png" alt="Aus Buildooors">
+      <img src="../logo.png?v=1" alt="Aus Buildooors">
       <span>Aus Buildooors</span>
     </a>
     <button class="nav-toggle" onclick="document.querySelector('.nav-links').classList.toggle('open')" aria-label="Menu">&#9776;</button>
     <div class="nav-links">
       <a href="index.html" class="active">Home</a>
       <a href="about.html">About</a>
+      <a href="members.html">Members</a>
       <a href="history.html">History</a>
     </div>
   </div>
@@ -36,7 +37,7 @@
 <main>
 
   <section class="hero fade-in">
-    <img src="../logo.png" alt="Aus Buildooors" class="hero-logo">
+    <img src="../logo.png?v=1" alt="Aus Buildooors" class="hero-logo">
     <h1>Aus Buildooors</h1>
     <p class="tagline">Australian crypto builders community. Helping each other out, connecting crypto larrikins.</p>
 
@@ -65,6 +66,12 @@
     <div class="cta-row">
       <a href="https://x.com/ausbuildooors" class="btn btn-primary" target="_blank" rel="noopener">Follow on X</a>
       <a href="about.html" class="btn btn-outline">Learn more</a>
+    </div>
+
+    <div class="sponsored-by">
+      <span>Sponsored by</span>
+      <a href="https://starkware.co/" target="_blank" rel="noopener"><img src="assets/logos/starkware/icon.png?v=1" alt="StarkWare"></a>
+      <a href="https://www.helixcollective.com/" target="_blank" rel="noopener"><img src="assets/logos/helix-collective/icon.png?v=1" alt="Helix Collective"></a>
     </div>
   </section>
 
@@ -100,14 +107,14 @@
     </div>
     <div class="card-grid" style="grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));">
       <div class="card" style="display:flex;gap:1.25rem;align-items:flex-start;">
-        <img src="logos/sydney.svg" alt="Sydney" style="width:56px;height:56px;border-radius:12px;flex-shrink:0;">
+        <img src="assets/logos/sydney/icon.svg?v=1" alt="Sydney" class="logo-city">
         <div>
           <h3>Sydney</h3>
           <p>The OG. Monthly meetups since November 2022. Talks, demos, beers, and the occasional degen moment.</p>
         </div>
       </div>
       <div class="card" style="display:flex;gap:1.25rem;align-items:flex-start;">
-        <img src="logos/brisbane.svg" alt="Brisbane" style="width:56px;height:56px;border-radius:12px;flex-shrink:0;">
+        <img src="assets/logos/brisbane/icon.svg?v=1" alt="Brisbane" class="logo-city">
         <div>
           <h3>Brisbane</h3>
           <p>Launched March 2025. Growing fast with its own flavour of builder energy.</p>
@@ -126,79 +133,79 @@
     <p style="margin-bottom: 1.5rem;">These are members and projects of our community.</p>
     <div class="partner-grid">
       <a href="https://www.cadenalegal.com.au/" target="_blank" rel="noopener" class="partner-card">
-        <img src="logos/cadena-legal.png" alt="Cadena Legal">
+        <img src="assets/logos/cadena-legal/icon.png?v=1" alt="Cadena Legal">
         <div class="partner-name">Cadena Legal</div>
         <div class="partner-type">Crypto law &amp; tax</div>
       </a>
       <a href="https://blacksheep.money/" target="_blank" rel="noopener" class="partner-card">
-        <img src="logos/blacksheep-money.png" alt="Blacksheep Money">
+        <img src="assets/logos/blacksheep-money/icon.png?v=1" alt="Blacksheep Money">
         <div class="partner-name">Blacksheep Money</div>
         <div class="partner-type">AUD on/offramp</div>
       </a>
       <a href="https://risechain.com/" target="_blank" rel="noopener" class="partner-card">
-        <img src="logos/rise-labs.png" alt="Rise Labs">
+        <img src="assets/logos/rise-labs/logobrand.svg?v=1" alt="Rise Labs">
         <div class="partner-name">Rise Labs</div>
         <div class="partner-type">Ethereum L2</div>
       </a>
       <a href="https://getsession.org/" target="_blank" rel="noopener" class="partner-card">
-        <img src="logos/session.png" alt="Session">
+        <img src="assets/logos/session/icon.png?v=1" alt="Session">
         <div class="partner-name">Session</div>
         <div class="partner-type">Encrypted messaging</div>
       </a>
       <a href="https://x.com/gamiwtf" target="_blank" rel="noopener" class="partner-card">
-        <img src="logos/gami.png" alt="gami.eth">
+        <img src="assets/logos/gami/icon.png?v=1" alt="gami.eth">
         <div class="partner-name">gami.eth</div>
         <div class="partner-type">Builder &amp; growth</div>
       </a>
-      <a href="https://imfer.lol/" target="_blank" rel="noopener" class="partner-card">
-        <img src="logos/imf.png" alt="IMF">
-        <div class="partner-name">IMF</div>
-        <div class="partner-type">International Meme Fund</div>
-      </a>
       <a href="https://www.ethstrat.xyz/" target="_blank" rel="noopener" class="partner-card">
-        <img src="logos/ethstrat.png" alt="Ethstrat">
+        <img src="assets/logos/ethstrat/icon.png?v=1" alt="Ethstrat">
         <div class="partner-name">Ethstrat</div>
         <div class="partner-type">ETH treasury protocol</div>
       </a>
       <a href="https://ethmelbourne.co/" target="_blank" rel="noopener" class="partner-card">
-        <img src="logos/ethmelbourne.png" alt="ETHMelbourne">
+        <img src="assets/logos/ethmelbourne/logobrand.png?v=1" alt="ETHMelbourne">
         <div class="partner-name">ETHMelbourne</div>
         <div class="partner-type">Ethereum Melbourne</div>
       </a>
       <a href="https://renprotocol.io/" target="_blank" rel="noopener" class="partner-card">
-        <img src="logos/ren-protocol.png" alt="Ren Protocol">
+        <img src="assets/logos/ren-protocol/logobrand.svg?v=1" alt="Ren Protocol">
         <div class="partner-name">Ren Protocol</div>
         <div class="partner-type">Cross-chain liquidity</div>
       </a>
       <a href="https://sigintzero.com/" target="_blank" rel="noopener" class="partner-card">
-        <img src="logos/sigint-zero.png" alt="Sigint Zero">
+        <img src="assets/logos/sigint-zero/logobrand.png?v=1" alt="Sigint Zero">
         <div class="partner-name">Sigint Zero</div>
         <div class="partner-type">Core friend</div>
       </a>
       <a href="https://underware.gg/" target="_blank" rel="noopener" class="partner-card">
-        <img src="logos/underware.png" alt="Underware">
+        <img src="assets/logos/underware/icon.jpg?v=1" alt="Underware">
         <div class="partner-name">Underware</div>
         <div class="partner-type">Onchain gaming</div>
       </a>
       <a href="https://bibliothecadao.xyz/" target="_blank" rel="noopener" class="partner-card">
-        <img src="logos/loot-realms.png" alt="Loot Realms / Bibliotica">
+        <img src="assets/logos/loot-realms/logobrand.png?v=1" alt="Loot Realms / Bibliotica">
         <div class="partner-name">Loot Realms / Bibliotica</div>
         <div class="partner-type">Onchain world-building</div>
       </a>
       <a href="https://www.helixcollective.com/" target="_blank" rel="noopener" class="partner-card">
-        <img src="logos/helix-collective.png" alt="Helix Collective">
+        <img src="assets/logos/helix-collective/icon.png?v=1" alt="Helix Collective">
         <div class="partner-name">Helix Collective</div>
         <div class="partner-type">Friend &amp; Sponsor</div>
       </a>
       <a href="https://www.ethsydney.net/" target="_blank" rel="noopener" class="partner-card">
-        <img src="logos/ethsydney.png" alt="ETHSydney">
+        <img src="assets/logos/ethsydney/icon.png?v=1" alt="ETHSydney">
         <div class="partner-name">ETHSydney</div>
         <div class="partner-type">Friend</div>
       </a>
       <a href="https://halaskastudio.com/" target="_blank" rel="noopener" class="partner-card">
-        <img src="logos/halaska-studio.png" alt="Halaska Studio">
+        <img src="assets/logos/halaska-studio/icon.png?v=1" alt="Halaska Studio">
         <div class="partner-name">Halaska Studio</div>
         <div class="partner-type">Friend</div>
+      </a>
+      <a href="https://garden.finance/" target="_blank" rel="noopener" class="partner-card">
+        <img src="assets/logos/garden-finance/icon.svg?v=1" alt="Garden Finance">
+        <div class="partner-name">Garden Finance</div>
+        <div class="partner-type">Bitcoin DeFi</div>
       </a>
     </div>
   </section>
@@ -213,22 +220,22 @@
     <p style="margin-bottom: 1.5rem;">We've hosted talks from some of the best in the ecosystem.</p>
     <div class="card-grid">
       <div class="card">
-        <img src="logos/ethereum-foundation.png" alt="Ethereum Foundation" style="width:36px;height:36px;border-radius:8px;margin-bottom:0.5rem;">
+        <img src="assets/logos/ethereum-foundation/icon.png?v=1" alt="Ethereum Foundation" class="logo-speaker">
         <h3>Ethereum Foundation Researchers</h3>
         <p>Multi-party cryptography research.</p>
       </div>
       <div class="card">
-        <img src="logos/piertwo.png" alt="Pier Two" style="width:36px;height:36px;border-radius:8px;margin-bottom:0.5rem;">
+        <img src="assets/logos/piertwo/icon.png?v=1" alt="Pier Two" class="logo-speaker">
         <h3>Pier Two</h3>
         <p>Australian-founded validator infrastructure and non-custodial staking.</p>
       </div>
       <div class="card">
-        <img src="logos/ethstrat.png" alt="Ethstrat" style="width:36px;height:36px;border-radius:8px;margin-bottom:0.5rem;">
+        <img src="assets/logos/ethstrat/icon.png?v=1" alt="Ethstrat" class="logo-speaker">
         <h3>Ethstrat</h3>
         <p>Ethereum treasury strategy and leveraged ETH exposure.</p>
       </div>
       <div class="card">
-        <img src="logos/rise-labs.png" alt="Rise Labs" style="width:36px;height:36px;border-radius:8px;margin-bottom:0.5rem;">
+        <img src="assets/logos/rise-labs/icon.png?v=1" alt="Rise Labs" class="logo-speaker">
         <h3>Rise Labs</h3>
         <p>High-performance Ethereum L2 with sub-5ms latency.</p>
       </div>

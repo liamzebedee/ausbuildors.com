@@ -5,21 +5,22 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>History &mdash; Aus Buildooors</title>
   <meta name="description" content="The history of Aus Buildooors meetups and community milestones.">
-  <link rel="icon" type="image/png" href="../logo.png">
-  <link rel="stylesheet" href="styles.css">
+  <link rel="icon" type="image/png" href="../logo.png?v=1">
+  <link rel="stylesheet" href="styles.css?v=1">
 </head>
 <body>
 
 <nav>
   <div class="nav-inner">
     <a href="index.html" class="nav-logo">
-      <img src="../logo.png" alt="Aus Buildooors">
+      <img src="../logo.png?v=1" alt="Aus Buildooors">
       <span>Aus Buildooors</span>
     </a>
     <button class="nav-toggle" onclick="document.querySelector('.nav-links').classList.toggle('open')" aria-label="Menu">&#9776;</button>
     <div class="nav-links">
       <a href="index.html">Home</a>
       <a href="about.html">About</a>
+      <a href="members.html">Members</a>
       <a href="history.html" class="active">History</a>
     </div>
   </div>
@@ -43,36 +44,8 @@
       <h2>Milestones</h2>
     </div>
 
-    <div class="timeline">
-      <div class="timeline-item">
-        <div class="date">March 2025</div>
-        <h3>Brisbane launches</h3>
-        <p>Inaugural Brisbane meetup brings the Aus Buildooors community to a second city. Featured talks on reg-compliant AUD on/offramp and a Bitcoin mining farm in Tasmania.</p>
-      </div>
-
-      <div class="timeline-item">
-        <div class="date">January 2025</div>
-        <h3>Double-city meetup</h3>
-        <p>First simultaneous Sydney + Brisbane meet. Presentations on credit cartels, Moosh, and Starknet updates.</p>
-      </div>
-
-      <div class="timeline-item">
-        <div class="date">2024</div>
-        <h3>460+ members &amp; featured talks</h3>
-        <p>The community crosses 450 members. Talks from Ethereum Foundation, Pier Two, and Ethstrat. Steady monthly cadence in Sydney with growing Brisbane interest.</p>
-      </div>
-
-      <div class="timeline-item">
-        <div class="date">2023</div>
-        <h3>Monthly rhythm</h3>
-        <p>Sydney meetups become a regular monthly fixture. Sponsorships from Helix Collective and StarkWare help keep events running. Community grows steadily through word of mouth.</p>
-      </div>
-
-      <div class="timeline-item">
-        <div class="date">November 2022</div>
-        <h3>Founded</h3>
-        <p>Aus Buildooors is founded. What started as a group chat becomes IRL with the first Sydney meetup. Monthly meetups every month since.</p>
-      </div>
+    <div class="timeline" id="milestones">
+      <!-- Generated from src/history/milestones.txt -->
     </div>
   </section>
 
@@ -85,37 +58,37 @@
     </div>
     <div class="card-grid">
       <div class="card">
-        <img src="logos/ethereum-foundation.png" alt="Ethereum Foundation" style="width:36px;height:36px;border-radius:8px;margin-bottom:0.5rem;">
+        <img src="assets/logos/ethereum-foundation/icon.png?v=1" alt="Ethereum Foundation" class="logo-speaker">
         <h3>Ethereum Foundation Researchers</h3>
         <p>Multi-party cryptography research.</p>
       </div>
       <div class="card">
-        <img src="logos/piertwo.png" alt="Pier Two" style="width:36px;height:36px;border-radius:8px;margin-bottom:0.5rem;">
+        <img src="assets/logos/piertwo/icon.png?v=1" alt="Pier Two" class="logo-speaker">
         <h3>Pier Two</h3>
         <p>Non-custodial staking infrastructure. $2B+ under stake, Brisbane-based.</p>
       </div>
       <div class="card">
-        <img src="logos/ethstrat.png" alt="Ethstrat" style="width:36px;height:36px;border-radius:8px;margin-bottom:0.5rem;">
+        <img src="assets/logos/ethstrat/icon.png?v=1" alt="Ethstrat" class="logo-speaker">
         <h3>Ethstrat</h3>
         <p>Ethereum treasury strategy and leveraged ETH exposure.</p>
       </div>
       <div class="card">
-        <img src="logos/rise-labs.png" alt="Rise Labs" style="width:36px;height:36px;border-radius:8px;margin-bottom:0.5rem;">
+        <img src="assets/logos/rise-labs/icon.png?v=1" alt="Rise Labs" class="logo-speaker">
         <h3>Rise Labs</h3>
         <p>High-performance Ethereum L2 with sub-5ms latency.</p>
       </div>
       <div class="card">
-        <img src="logos/blacksheep-money.png" alt="Blacksheep Money" style="width:36px;height:36px;border-radius:8px;margin-bottom:0.5rem;">
+        <img src="assets/logos/blacksheep-money/icon.png?v=1" alt="Blacksheep Money" class="logo-speaker">
         <h3>Blacksheep Money</h3>
         <p>Reg-compliant AUD on/offramp for crypto.</p>
       </div>
       <div class="card">
-        <img src="logos/imf.png" alt="IMF" style="width:36px;height:36px;border-radius:8px;margin-bottom:0.5rem;">
+        <img src="assets/logos/imf/icon.png?v=1" alt="IMF" class="logo-speaker">
         <h3>IMF</h3>
         <p>The International Meme Fund &mdash; memecoin collateral and $MONEY.</p>
       </div>
       <div class="card">
-        <img src="logos/starkware.png" alt="StarkWare" style="width:36px;height:36px;border-radius:8px;margin-bottom:0.5rem;">
+        <img src="assets/logos/starkware/icon.png?v=1" alt="StarkWare" class="logo-speaker">
         <h3>StarkWare</h3>
         <p>Starknet ecosystem updates and opportunities.</p>
       </div>
@@ -124,7 +97,7 @@
         <p>Inventor of ralphing.</p>
       </div>
       <div class="card">
-        <img src="logos/ren-protocol.png" alt="Ren Protocol" style="width:36px;height:36px;border-radius:8px;margin-bottom:0.5rem;">
+        <img src="assets/logos/ren-protocol/icon.png?v=1" alt="Ren Protocol" class="logo-speaker">
         <h3>Founder of Ren Protocol</h3>
         <p>Cross-chain liquidity and the story behind Ren.</p>
       </div>
@@ -144,9 +117,9 @@
       <h2>Moments</h2>
     </div>
     <div class="gallery">
-      <img src="../media/helix-talks.jpg" alt="Helix talks at Aus Buildooors meetup">
-      <img src="../media/image1.jpeg" alt="Aus Buildooors meetup">
-      <img src="../media/image3.png" alt="Aus Buildooors meetup">
+      <img src="../media/helix-talks.jpg?v=1" alt="Helix talks at Aus Buildooors meetup">
+      <img src="../media/image1.jpeg?v=1" alt="Aus Buildooors meetup">
+      <img src="../media/image3.png?v=1" alt="Aus Buildooors meetup">
     </div>
   </section>
 
@@ -166,6 +139,18 @@
   </section>
 
 </main>
+
+<script>
+fetch('src/history/milestones.txt')
+  .then(r => r.text())
+  .then(text => {
+    const el = document.getElementById('milestones');
+    el.innerHTML = text.trim().split('\n').map(line => {
+      const [date, title, desc] = line.split(' | ');
+      return `<div class="timeline-item"><div class="date">${date}</div><h3>${title}</h3><p>${desc}</p></div>`;
+    }).join('');
+  });
+</script>
 
 <footer>
   <p>Aus Buildooors &mdash; proudly made in Australia since 2022. <a href="https://x.com/ausbuildooors" target="_blank" rel="noopener">@ausbuildooors</a></p>

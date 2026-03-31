@@ -12,7 +12,15 @@ const server = Bun.serve({
       return new Response("Upgrade failed", { status: 400 });
     }
 
-    const resolved = pathname === "/" ? "/index.html" : pathname;
+    let resolved = pathname === "/" ? "/index.html" : pathname;
+
+    // Clean URLs: /join -> /join.html
+    if (!resolved.includes(".")) {
+      const htmlFile = Bun.file("." + resolved + ".html");
+      if (await htmlFile.exists()) {
+        resolved = resolved + ".html";
+      }
+    }
 
     // Bundle TSX/TS on the fly
     if (/\.tsx?$/.test(resolved)) {

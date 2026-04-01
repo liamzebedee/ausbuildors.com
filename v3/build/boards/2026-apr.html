@@ -10,17 +10,17 @@
 
     body {
       font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-      background: #0a0a0a;
-      color: #e0e0e0;
+      background: #f5f5f5;
+      color: #222;
       min-height: 100vh;
     }
 
     /* Header */
     .header {
-      padding: 24px 32px 0;
+      padding: 20px 28px 0;
       display: flex;
       align-items: center;
-      gap: 16px;
+      gap: 14px;
     }
     .header img {
       width: 36px;
@@ -33,91 +33,130 @@
       font-size: 14px;
       font-weight: 500;
     }
-    .header a:hover { color: #fff; }
-    .header .sep { color: #333; }
+    .header a:hover { color: #000; }
+    .header .sep { color: #ccc; }
 
     /* Month tabs */
     .tabs {
       display: flex;
       align-items: center;
       gap: 0;
-      padding: 24px 32px 0;
+      padding: 18px 28px 0;
       flex-wrap: wrap;
     }
     .tabs .year {
-      font-size: 13px;
+      font-size: 14px;
       font-weight: 700;
-      color: #555;
+      color: #999;
       margin-right: 8px;
       letter-spacing: 0.05em;
     }
     .tabs a {
       display: inline-block;
-      padding: 8px 14px;
-      font-size: 13px;
+      padding: 7px 12px;
+      font-size: 14px;
       font-weight: 600;
-      color: #555;
+      color: #bbb;
       text-decoration: none;
       border-radius: 8px;
       transition: all 0.15s;
       letter-spacing: 0.04em;
     }
     .tabs a.past {
-      color: #777;
+      color: #aaa;
     }
     .tabs a:hover {
-      color: #aaa;
-      background: #1a1a1a;
+      color: #555;
+      background: #eee;
     }
     .tabs a.active {
-      color: #fff;
-      background: #1f1f1f;
+      color: #000;
+      background: #e0e0e0;
+      font-weight: 700;
     }
 
     /* Page title */
     .page-title {
-      padding: 32px 32px 8px;
+      padding: 24px 28px 4px;
     }
     .page-title h1 {
-      font-size: 28px;
-      font-weight: 700;
-      color: #fff;
+      font-size: 40px;
+      font-weight: 900;
+      color: #000;
+      letter-spacing: -0.02em;
     }
     .page-title p {
-      font-size: 14px;
-      color: #666;
-      margin-top: 4px;
+      font-size: 16px;
+      color: #888;
+      margin-top: 2px;
+    }
+
+    /* Main layout: two columns */
+    .main-layout {
+      display: flex;
+      gap: 24px;
+      padding: 16px 28px 48px;
+      align-items: flex-start;
+    }
+
+    /* Left column: shipped */
+    .left-col {
+      flex: 1;
+      min-width: 0;
+    }
+
+    /* Right column: community news */
+    .right-col {
+      width: 280px;
+      flex-shrink: 0;
+      position: sticky;
+      top: 24px;
+    }
+
+    /* Section label */
+    .section-label {
+      margin-bottom: 10px;
+    }
+    .section-label span {
+      display: inline-block;
+      font-size: 24px;
+      font-weight: 900;
+      letter-spacing: 0.1em;
+      color: #000;
+      background: none;
+      padding: 0;
     }
 
     /* Cards */
     .cards {
-      padding: 24px 32px 48px;
       display: flex;
       flex-direction: column;
-      gap: 16px;
-      max-width: 800px;
+      gap: 10px;
     }
 
     .card {
       display: flex;
-      gap: 20px;
-      background: #141414;
-      border: 1px solid #1e1e1e;
+      gap: 16px;
+      background: #fff;
+      border: 1px solid #e5e5e5;
       border-radius: 12px;
-      padding: 20px;
-      transition: border-color 0.2s;
+      padding: 16px;
+      transition: all 0.2s;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.04);
     }
     .card:hover {
-      border-color: #333;
+      border-color: #ccc;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+      transform: translateY(-1px);
     }
 
     .card-image {
       flex-shrink: 0;
-      width: 100px;
-      height: 100px;
+      width: 80px;
+      height: 80px;
       border-radius: 10px;
       overflow: hidden;
-      background: #1a1a1a;
+      background: #f0f0f0;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -127,28 +166,25 @@
       height: 100%;
       object-fit: cover;
     }
-    .card-image .emoji-thumb {
-      font-size: 40px;
-      line-height: 1;
-    }
 
     .card-body {
       flex: 1;
       display: flex;
       flex-direction: column;
-      gap: 6px;
+      gap: 3px;
+      min-width: 0;
     }
 
     .card-body h3 {
-      font-size: 17px;
-      font-weight: 700;
-      color: #fff;
+      font-size: 18px;
+      font-weight: 800;
+      color: #000;
     }
 
     .card-body .blurb {
       font-size: 14px;
-      color: #999;
-      line-height: 1.5;
+      color: #666;
+      line-height: 1.45;
     }
 
     .card-meta {
@@ -156,41 +192,89 @@
       align-items: center;
       gap: 12px;
       margin-top: auto;
-      padding-top: 8px;
+      padding-top: 6px;
     }
 
     .btn-visit {
       display: inline-block;
-      padding: 6px 16px;
-      font-size: 12px;
-      font-weight: 600;
+      padding: 5px 14px;
+      font-size: 13px;
+      font-weight: 700;
       color: #fff;
-      background: #2a2a2a;
-      border: 1px solid #333;
+      background: #000;
+      border: none;
       border-radius: 6px;
       text-decoration: none;
       transition: all 0.15s;
     }
     .btn-visit:hover {
       background: #333;
-      border-color: #444;
     }
 
     .author {
       font-size: 12px;
-      color: #666;
+      color: #999;
     }
     .author a {
-      color: #888;
+      color: #666;
       text-decoration: none;
+      font-weight: 500;
     }
     .author a:hover {
-      color: #fff;
+      color: #000;
+    }
+
+    /* Community News - right col */
+    .community-news {
+      background: #fff;
+      border: 1px solid #e5e5e5;
+      border-radius: 12px;
+      padding: 16px;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+    }
+    .community-news h2 {
+      font-family: 'Comic Sans MS', 'Comic Sans', 'Chalkboard SE', cursive;
+      font-size: 16px;
+      font-weight: 700;
+      color: #000;
+      margin-bottom: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+    .community-news ul {
+      list-style: none;
+      font-family: 'Comic Sans MS', 'Comic Sans', 'Chalkboard SE', cursive;
+    }
+    .community-news li {
+      font-size: 14px;
+      color: #555;
+      padding: 8px 10px;
+      border-radius: 6px;
+      background: #fafafa;
+      border: 1px dashed #e0e0e0;
+      margin-bottom: 6px;
+      line-height: 1.4;
+    }
+    .community-news li:last-child {
+      margin-bottom: 0;
+    }
+    .community-news li::before {
+      content: '> ';
+      color: #bbb;
     }
 
     /* Responsive */
-    @media (max-width: 600px) {
-      .header, .tabs, .page-title, .cards { padding-left: 16px; padding-right: 16px; }
+    @media (max-width: 768px) {
+      .main-layout {
+        flex-direction: column;
+        padding-left: 16px;
+        padding-right: 16px;
+      }
+      .right-col {
+        width: 100%;
+        position: static;
+      }
+      .header, .tabs, .page-title { padding-left: 16px; padding-right: 16px; }
       .card { flex-direction: column; }
       .card-image { width: 100%; height: 160px; }
     }
@@ -223,53 +307,90 @@
 
   <div class="page-title">
     <h1>April 2026</h1>
-    <p>What the community's been shipping</p>
+    <p>bloody community news get some of this in ya pieholes</p>
   </div>
 
-  <div class="cards">
+  <div class="main-layout">
 
-    <!-- Check Petrol -->
-    <div class="card">
-      <div class="card-image">
-        <img src="https://unavatar.io/x/ideacasino" alt="@ideacasino">
+    <!-- Left: Shipped -->
+    <div class="left-col">
+      <div class="section-label">
+        <span>SHIPPED</span>
       </div>
-      <div class="card-body">
-        <h3>Check Petrol</h3>
-        <p class="blurb">Live fuel outages and petrol price comparison across 6,400+ Australian service stations. Aggregates data from government APIs (NSW FuelCheck, WA FuelWatch) and community reports to help you find the cheapest fuel near you.</p>
-        <div class="card-meta">
-          <a href="https://checkpetrol.com.au/" target="_blank" class="btn-visit">Visit</a>
-          <span class="author">by <a href="https://x.com/ideacasino" target="_blank">@ideacasino</a> &amp; <a href="https://x.com/hameonline" target="_blank">@hameonline</a></span>
+
+      <div class="cards">
+
+        <!-- Check Petrol -->
+        <div class="card">
+          <div class="card-image">
+            <img src="https://unavatar.io/x/ideacasino" alt="@ideacasino">
+          </div>
+          <div class="card-body">
+            <h3>Check Petrol</h3>
+            <p class="blurb">Shows you which petrol stations near you are out of fuel and where the cheapest petrol is. Covers over 6,400 servos across Australia so you stop getting ripped off at the pump.</p>
+            <div class="card-meta">
+              <a href="https://checkpetrol.com.au/" target="_blank" class="btn-visit">Visit</a>
+              <span class="author">by <a href="https://x.com/ideacasino" target="_blank">@ideacasino</a> &amp; <a href="https://x.com/hameonline" target="_blank">@hameonline</a></span>
+            </div>
+          </div>
         </div>
+
+        <!-- NDIS.WTF -->
+        <div class="card">
+          <div class="card-image">
+            <img src="https://unavatar.io/x/centerlynx" alt="@centerlynx">
+          </div>
+          <div class="card-body">
+            <h3>NDIS.WTF</h3>
+            <p class="blurb">The NDIS gives billions of dollars to help disabled Australians, but where does it actually go? This site digs into the data with maps and charts to find out who's getting the money and whether it's being spent properly.</p>
+            <div class="card-meta">
+              <a href="https://ndis.wtf/" target="_blank" class="btn-visit">Visit</a>
+              <span class="author">by <a href="https://x.com/centerlynx" target="_blank">@centerlynx</a></span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Timeline -->
+        <div class="card">
+          <div class="card-image">
+            <img src="https://unavatar.io/x/stableshaman" alt="@stableshaman">
+          </div>
+          <div class="card-body">
+            <h3>Timeline</h3>
+            <p class="blurb">A brand new news show that actually talks to real people on the street about what's going on in Australia. First episode is about the fuel crisis and features the guys behind Check Petrol.</p>
+            <div class="card-meta">
+              <a href="https://x.com/stableshaman/status/2039150776384373178" target="_blank" class="btn-visit">Watch</a>
+              <span class="author">by <a href="https://x.com/stableshaman" target="_blank">@stableshaman</a></span>
+            </div>
+          </div>
+        </div>
+
+        <!-- ANZ Crypto Map -->
+        <div class="card">
+          <div class="card-image">
+            <img src="https://unavatar.io/x/nawazahmednz" alt="@nawazahmednz">
+          </div>
+          <div class="card-body">
+            <h3>ANZ Crypto Map</h3>
+            <p class="blurb">A map of every crypto company in Australia and New Zealand — over 70 startups, investors, and events. If you wanna know who's building what and where, this is the place to look.</p>
+            <div class="card-meta">
+              <a href="https://anzcrypto.xyz/" target="_blank" class="btn-visit">Visit</a>
+              <span class="author">by <a href="https://x.com/nawazahmednz" target="_blank">Nawaz Ahmed</a></span>
+            </div>
+          </div>
+        </div>
+
       </div>
     </div>
 
-    <!-- NDIS.WTF -->
-    <div class="card">
-      <div class="card-image">
-        <img src="https://unavatar.io/x/centerlynx" alt="@centerlynx">
-      </div>
-      <div class="card-body">
-        <h3>NDIS.WTF</h3>
-        <p class="blurb">Independent analysis of Australia's National Disability Insurance Scheme — tracking where the money goes through data investigations and interactive maps. Covers provider density, SIL farm mapping, youth autism trends, and budget breakdowns.</p>
-        <div class="card-meta">
-          <a href="https://ndis.wtf/" target="_blank" class="btn-visit">Visit</a>
-          <span class="author">by <a href="https://x.com/centerlynx" target="_blank">@centerlynx</a></span>
-        </div>
-      </div>
-    </div>
-
-    <!-- Timeline -->
-    <div class="card">
-      <div class="card-image">
-        <img src="https://unavatar.io/x/stableshaman" alt="@stableshaman">
-      </div>
-      <div class="card-body">
-        <h3>Timeline</h3>
-        <p class="blurb">A new independent news show featuring street interviews and in-depth conversations about what's happening in Australia. First episode covers the fuel crisis, with guests from the Check Petrol team.</p>
-        <div class="card-meta">
-          <a href="https://x.com/stableshaman/status/2039150776384373178" target="_blank" class="btn-visit">Watch</a>
-          <span class="author">by <a href="https://x.com/stableshaman" target="_blank">@stableshaman</a></span>
-        </div>
+    <!-- Right: Community News -->
+    <div class="right-col">
+      <div class="community-news">
+        <h2>Community News</h2>
+        <ul>
+          <li>liam is studying synthetic biology at HTGAA</li>
+          <li>gami's mum sank 2 pints</li>
+        </ul>
       </div>
     </div>
 

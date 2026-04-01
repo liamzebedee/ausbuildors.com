@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Aus Buildooors — Board — April 2026</title>
+  <link rel="icon" type="image/png" href="../logo-zbf0g6ec.png">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background: #0a0a0a;
+      color: #e0e0e0;
+      min-height: 100vh;
+    }
+
+    /* Header */
+    .header {
+      padding: 24px 32px 0;
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+    .header img {
+      width: 36px;
+      height: 36px;
+      border-radius: 8px;
+    }
+    .header a {
+      color: #888;
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: 500;
+    }
+    .header a:hover { color: #fff; }
+    .header .sep { color: #333; }
+
+    /* Month tabs */
+    .tabs {
+      display: flex;
+      align-items: center;
+      gap: 0;
+      padding: 24px 32px 0;
+      flex-wrap: wrap;
+    }
+    .tabs .year {
+      font-size: 13px;
+      font-weight: 700;
+      color: #555;
+      margin-right: 8px;
+      letter-spacing: 0.05em;
+    }
+    .tabs a {
+      display: inline-block;
+      padding: 8px 14px;
+      font-size: 13px;
+      font-weight: 600;
+      color: #555;
+      text-decoration: none;
+      border-radius: 8px;
+      transition: all 0.15s;
+      letter-spacing: 0.04em;
+    }
+    .tabs a.past {
+      color: #777;
+    }
+    .tabs a:hover {
+      color: #aaa;
+      background: #1a1a1a;
+    }
+    .tabs a.active {
+      color: #fff;
+      background: #1f1f1f;
+    }
+
+    /* Page title */
+    .page-title {
+      padding: 32px 32px 8px;
+    }
+    .page-title h1 {
+      font-size: 28px;
+      font-weight: 700;
+      color: #fff;
+    }
+    .page-title p {
+      font-size: 14px;
+      color: #666;
+      margin-top: 4px;
+    }
+
+    /* Cards */
+    .cards {
+      padding: 24px 32px 48px;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      max-width: 800px;
+    }
+
+    .card {
+      display: flex;
+      gap: 20px;
+      background: #141414;
+      border: 1px solid #1e1e1e;
+      border-radius: 12px;
+      padding: 20px;
+      transition: border-color 0.2s;
+    }
+    .card:hover {
+      border-color: #333;
+    }
+
+    .card-image {
+      flex-shrink: 0;
+      width: 100px;
+      height: 100px;
+      border-radius: 10px;
+      overflow: hidden;
+      background: #1a1a1a;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .card-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    .card-image .emoji-thumb {
+      font-size: 40px;
+      line-height: 1;
+    }
+
+    .card-body {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    .card-body h3 {
+      font-size: 17px;
+      font-weight: 700;
+      color: #fff;
+    }
+
+    .card-body .blurb {
+      font-size: 14px;
+      color: #999;
+      line-height: 1.5;
+    }
+
+    .card-meta {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-top: auto;
+      padding-top: 8px;
+    }
+
+    .btn-visit {
+      display: inline-block;
+      padding: 6px 16px;
+      font-size: 12px;
+      font-weight: 600;
+      color: #fff;
+      background: #2a2a2a;
+      border: 1px solid #333;
+      border-radius: 6px;
+      text-decoration: none;
+      transition: all 0.15s;
+    }
+    .btn-visit:hover {
+      background: #333;
+      border-color: #444;
+    }
+
+    .author {
+      font-size: 12px;
+      color: #666;
+    }
+    .author a {
+      color: #888;
+      text-decoration: none;
+    }
+    .author a:hover {
+      color: #fff;
+    }
+
+    /* Responsive */
+    @media (max-width: 600px) {
+      .header, .tabs, .page-title, .cards { padding-left: 16px; padding-right: 16px; }
+      .card { flex-direction: column; }
+      .card-image { width: 100%; height: 160px; }
+    }
+  </style>
+<script type="module" crossorigin src="../2026-apr-4d476sgg.js"></script></head>
+<body>
+
+  <div class="header">
+    <img src="../logo-zbf0g6ec.png" alt="Aus Buildooors">
+    <a href="../index.html">Aus Buildooors</a>
+    <span class="sep">/</span>
+    <a href="#">Board</a>
+  </div>
+
+  <div class="tabs">
+    <span class="year">2026</span>
+    <a href="#" class="past">JAN</a>
+    <a href="#" class="past">FEB</a>
+    <a href="#" class="past">MAR</a>
+    <a href="#" class="active">APR</a>
+    <a href="#">MAY</a>
+    <a href="#">JUN</a>
+    <a href="#">JUL</a>
+    <a href="#">AUG</a>
+    <a href="#">SEP</a>
+    <a href="#">OCT</a>
+    <a href="#">NOV</a>
+    <a href="#">DEC</a>
+  </div>
+
+  <div class="page-title">
+    <h1>April 2026</h1>
+    <p>What the community's been shipping</p>
+  </div>
+
+  <div class="cards">
+
+    <!-- Check Petrol -->
+    <div class="card">
+      <div class="card-image">
+        <img src="https://unavatar.io/x/ideacasino" alt="@ideacasino">
+      </div>
+      <div class="card-body">
+        <h3>Check Petrol</h3>
+        <p class="blurb">Live fuel outages and petrol price comparison across 6,400+ Australian service stations. Aggregates data from government APIs (NSW FuelCheck, WA FuelWatch) and community reports to help you find the cheapest fuel near you.</p>
+        <div class="card-meta">
+          <a href="https://checkpetrol.com.au/" target="_blank" class="btn-visit">Visit</a>
+          <span class="author">by <a href="https://x.com/ideacasino" target="_blank">@ideacasino</a> &amp; <a href="https://x.com/hameonline" target="_blank">@hameonline</a></span>
+        </div>
+      </div>
+    </div>
+
+    <!-- NDIS.WTF -->
+    <div class="card">
+      <div class="card-image">
+        <img src="https://unavatar.io/x/centerlynx" alt="@centerlynx">
+      </div>
+      <div class="card-body">
+        <h3>NDIS.WTF</h3>
+        <p class="blurb">Independent analysis of Australia's National Disability Insurance Scheme — tracking where the money goes through data investigations and interactive maps. Covers provider density, SIL farm mapping, youth autism trends, and budget breakdowns.</p>
+        <div class="card-meta">
+          <a href="https://ndis.wtf/" target="_blank" class="btn-visit">Visit</a>
+          <span class="author">by <a href="https://x.com/centerlynx" target="_blank">@centerlynx</a></span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Timeline -->
+    <div class="card">
+      <div class="card-image">
+        <img src="https://unavatar.io/x/stableshaman" alt="@stableshaman">
+      </div>
+      <div class="card-body">
+        <h3>Timeline</h3>
+        <p class="blurb">A new independent news show featuring street interviews and in-depth conversations about what's happening in Australia. First episode covers the fuel crisis, with guests from the Check Petrol team.</p>
+        <div class="card-meta">
+          <a href="https://x.com/stableshaman/status/2039150776384373178" target="_blank" class="btn-visit">Watch</a>
+          <span class="author">by <a href="https://x.com/stableshaman" target="_blank">@stableshaman</a></span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+</body>
+</html>

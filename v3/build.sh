@@ -11,6 +11,7 @@ bun build \
   members.html \
   expertise.html \
   join.html \
+  boards/*.html \
   --outdir=build \
   --minify
 

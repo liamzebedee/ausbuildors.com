@@ -3,6 +3,14 @@ import { Nav } from "./Nav";
 
 document.querySelector("nav")!.appendChild(<Nav activePage="home" />);
 
+document.querySelectorAll<HTMLButtonElement>("[data-copy-tweet]").forEach((button) => {
+  button.addEventListener("click", async () => {
+    await navigator.clipboard.writeText(button.dataset.copyTweet!);
+    button.textContent = "Copied!";
+    setTimeout(() => { button.textContent = "Copy link"; }, 2000);
+  });
+});
+
 const AUSBUILDOR_API_BASE_URL = "https://liamz.co/api/ausbuildor";
 
 // Calculate meetup count: 49 + months since today (2026-03-29)

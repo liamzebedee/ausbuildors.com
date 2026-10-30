@@ -1,5 +1,6 @@
 export const members = [
   { name: "Cadena Legal", url: "https://www.cadenalegal.com.au/", logo: "cadena-legal/icon.png", area: "Crypto law & tax", type: "project" as const },
+  { name: "Adiuvo Legal", url: "https://adiuvolegal.com.au/", logo: "adiuvo-legal/icon.jpg", area: "Web3 & crypto law", type: "project" as const },
   { name: "Blacksheep Money", url: "https://blacksheep.money/", logo: "blacksheep-money/icon.png", area: "AUD on/offramp", type: "project" as const },
   { name: "Rise Labs", url: "https://risechain.com/", logo: "rise-labs/logobrand.svg", area: "Ethereum L2", type: "project" as const },
   { name: "Session", url: "https://getsession.org/", logo: "session/icon.png", area: "Encrypted messaging", type: "project" as const },
